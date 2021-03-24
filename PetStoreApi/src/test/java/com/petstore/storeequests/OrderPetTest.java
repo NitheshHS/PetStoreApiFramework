@@ -1,5 +1,9 @@
 package com.petstore.storeequests;
 
+import static io.restassured.RestAssured.given;
+
+import java.util.concurrent.TimeUnit;
+
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
@@ -17,10 +21,6 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-
-import static io.restassured.RestAssured.*;
-
-import java.util.concurrent.TimeUnit;
 /**
  * 
  * @author Nitheesha
@@ -42,6 +42,7 @@ public class OrderPetTest extends BaseTest{
 			.body(petPayLoad)
 		.when()
 			.post(PathConstants.addNewPet);
+		 
 		response.then()
 			.assertThat().statusCode(200)
 		.and()

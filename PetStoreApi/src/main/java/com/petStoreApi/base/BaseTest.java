@@ -13,7 +13,7 @@ public class BaseTest {
 	public void setUp() {
 		RequestSpecBuilder specBuilder=new RequestSpecBuilder();
 		specBuilder.setBaseUri("https://petstore.swagger.io/v2");
-		specBuilder.setContentType(ContentType.JSON);
+		//specBuilder.setContentType(ContentType.BINARY);
 		spec=specBuilder.build();
 	}
 	
